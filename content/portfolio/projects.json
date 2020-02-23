@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Project 1",
+        "slug": "project-1",
+        "url": "https://example.com/",
+        "image": "./images/project1.jpg",
+        "description": "Woohoo timeeee",
+        "date": "2020-02-21T13:37:27+00:00"
+    },
+    {
+        "title": "Project 2",
+        "slug": "project-2",
+        "url": "https://example.com/",
+        "image": "./images/project2.jpg",
+        "description": "Woohoo timeeee",
+        "date": "2020-02-22T13:37:27+00:00"
+    },
+    {
+        "title": "Project 3",
+        "slug": "project-3",
+        "url": "https://example.com/",
+        "image": "./images/project3.jpg",
+        "description": "Woohoo timeeee",
+        "date": "2020-02-23T13:37:27+00:00"
+    },
+    {
+        "title": "Project 4",
+        "slug": "project-4",
+        "url": "https://example.com/",
+        "image": "./images/project4.jpg",
+        "description": "Woohoo timeeee",
+        "date": "2020-02-24T13:37:27+00:00"
+    }
+]

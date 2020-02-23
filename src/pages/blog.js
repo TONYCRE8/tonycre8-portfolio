@@ -5,30 +5,26 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Posts from "../components/blog/posts"
-import About from "../components/about/about"
-import ProjectPreview from "../components/portfolio/project-preview"
 
-import "../styles/index.css"
 import { rhythm } from "../utils/typography"
+import "../styles/blog.css"
 
-const SiteIndex = ({ data, location }) => {
+const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
   return (
     <>
       <Layout location={location} title={siteTitle}>
-        <SEO title="Home page" />
-        <About />
-        <ProjectPreview />
-        <Posts data={data} id="main" />
-        <Link to={`/blog`}>MORE BLOGS</Link>
+        <SEO title="All posts" />
+        <Bio />
+        <Posts data={data} id="blog"/>
       </Layout>
-    </>
+      </>
   )
 }
 
-export default SiteIndex
+export default BlogIndex
 
 export const pageQuery = graphql`
   query {
@@ -37,8 +33,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt

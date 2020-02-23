@@ -1,0 +1,27 @@
+#blog.post {
+    display: grid;
+    grid-template-areas:
+        'date img'
+        'date title'
+        'date desc';
+}
+
+#blog.thumbnail {
+    grid-area: img;
+}
+
+#blog.post-title {
+    grid-area: title;
+    color: #4422ff;
+    margin: 0;
+}
+
+#blog.post-date {
+    grid-area: date;
+    transform: rotate(-90deg);
+    transform-origin: 75px 20px;
+}
+
+#blog.post-desc {
+    grid-area: desc;
+}
