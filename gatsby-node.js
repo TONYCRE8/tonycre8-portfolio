@@ -39,7 +39,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   )
 
   if (result.errors) {
-    throw result.errors
+    reporter.panic('There was a problem loading your projects!');
+    return;
   }
 
   // Create blog posts pages.
