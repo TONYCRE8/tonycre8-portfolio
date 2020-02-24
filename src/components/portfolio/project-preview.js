@@ -12,11 +12,11 @@ export default function ProjectPreview() {
                 slug
                 description
                 image {
-                    childImageSharp {
-                        sizes(maxWidth: 630) {
-                          ...GatsbyImageSharpSizes
-                        }
-                      }
+                  childImageSharp {
+                    fluid(maxWidth: 400) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
                 }
               }
             }
@@ -32,7 +32,7 @@ export default function ProjectPreview() {
                 const title=project.title;
                 const description=project.description;
                 const slug=project.slug;
-                const imageData=project.image.childImageSharp.sizes;
+                const imageData=project.image.childImageSharp.fluid;
     
                 return(
                 <ProjectItems 

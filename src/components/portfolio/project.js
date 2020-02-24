@@ -4,7 +4,7 @@ import Image from 'gatsby-image'
 import "../../styles/projects.css"
 
 const Project = ({ imageData, title, description, url }) => (
-    <div className="project-item">
+    <div className="project">
         <h1 className="project-title">{title}
         </h1>
         <Image sizes={imageData} alt={title} className="project-image"/>

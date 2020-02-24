@@ -11,10 +11,10 @@ export const query = graphql`
                 url
                 image {
                     childImageSharp {
-                        sizes(maxWidth: 630) {
-                        ...GatsbyImageSharpSizes
+                        fluid(maxWidth: 400) {
+                          ...GatsbyImageSharpFluid
                         }
-                    }
+                      }
             }
         }
     }
@@ -24,17 +24,17 @@ const ProjectTemplate = ({ data }) => {
     const project = data.projectsJson;
     const title = project.title;
     const description = project.description;
-    const imageData = project.image.childImageSharp.sizes;
+    const imageData = project.image.childImageSharp.fluid;
     const url = project.url;
 
     return (
-        <Layout>
-            <Project>
+        <Layout title="TONYCRE8">
+            <Project
                 title={title}
                 description={description}
                 imageData={imageData}
                 url={url}
-            </Project>
+            />
         </Layout>
     )
 }
