@@ -1,11 +1,11 @@
 import React from 'react'
-import { link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import ProjectItems from "./project-items"
 
-export default function ProjectPreview() {
+export default function ProjectPreview( {limit} ) {
     const data = useStaticQuery(graphql`
     {
-        allProjectsJson(sort: {fields: [date], order: DESC } limit: 3) {
+        allProjectsJson(sort: {fields: [date], order: DESC }) {
             edges {
               node {
                 title
@@ -28,7 +28,7 @@ export default function ProjectPreview() {
     
     return (
         <>
-            {projects.map(({ node: project }) => {
+            {projects.slice(0, limit).map(({ node: project }) => {
                 const title=project.title;
                 const description=project.description;
                 const slug=project.slug;

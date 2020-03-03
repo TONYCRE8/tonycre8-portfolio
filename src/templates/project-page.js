@@ -1,7 +1,10 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/layout'
+import { Link, graphql } from "gatsby"
+import SEO from "../components/seo"
+import Layout from "../components/layout"
 import Project from '../components/portfolio/project'
+import { rhythm, scale } from "../utils/typography"
+
 
 export const query = graphql`
     query ($slug: String!) {
@@ -28,7 +31,8 @@ const ProjectTemplate = ({ data }) => {
     const url = project.url;
 
     return (
-        <Layout title="TONYCRE8">
+        <Layout width={rhythm(24)}>
+            <SEO title={title} />
             <Project
                 title={title}
                 description={description}

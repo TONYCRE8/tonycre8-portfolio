@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `TONYCRE8 Blog`,
+    title: `TONYCRE8`,
     author: `Anthony Ingall`,
     description: `#`,
     siteUrl: `https://www.tonycre8.co.uk`,
@@ -21,6 +21,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/portfolio`,
         name: `portfolio`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/about`,
+        name: `about`,
       },
     },
     {
@@ -68,9 +75,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
+        name: `TONYCRE8 Blog`,
+        short_name: `TONYCRE8`,
+        start_url: `/blog`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,

@@ -6,15 +6,15 @@ import "../../styles/projects.css"
 export default function ProjectItems({ slug, imageData, title, description}) {
     return (
         <div className="project-item">
-            <Link to={`${slug}`}>
+            <Link to={`projects/${slug}`}>
                 <Image sizes={imageData} alt={title} className="project-image"/>
             </Link>
             <div className="project-info">
                 <h2 className="project-title">
-                    <Link to={`${slug}`}>{title}</Link>
+                    <Link to={`projects/${slug}`}>{title}</Link>
                 </h2>
                 <p className="project-description">{description}</p>
-                <p className="project-link"><Link to={`${slug}`}>View project &rarr;</Link></p>
+                <p className="project-link"><Link to={`projects/${slug}`}>View project &rarr;</Link></p>
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -12,7 +12,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { previous, next } = pageContext
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout width={`${rhythm(24)}`}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}

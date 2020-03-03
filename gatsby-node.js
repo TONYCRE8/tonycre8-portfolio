@@ -68,7 +68,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const slug = project.slug;
 
     actions.createPage({
-      path: `${slug}`,
+      path: `projects/${slug}`,
       component: require.resolve('./src/templates/project-page.js'),
       context: { slug },
     });

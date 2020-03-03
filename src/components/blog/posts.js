@@ -2,11 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from 'gatsby-image'
 
-import Bio from "../bio"
-import Layout from "../layout"
-import SEO from "../seo"
-import { rhythm } from "../../utils/typography"
-
 export default function Posts({ data, location, style, id }) {
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges

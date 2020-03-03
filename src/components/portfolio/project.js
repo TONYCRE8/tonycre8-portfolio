@@ -1,16 +1,18 @@
 import React from 'react'
 import { Link } from 'gatsby';
 import Image from 'gatsby-image'
-import "../../styles/projects.css"
 
 const Project = ({ imageData, title, description, url }) => (
     <div className="project">
+        <Image fluid={imageData} alt={title} className="project-image" style={{
+            width: 630,
+            height: "auto"
+        }}/>
         <h1 className="project-title">{title}
         </h1>
-        <Image sizes={imageData} alt={title} className="project-image"/>
         <p className="project-description">{description}</p>
-        <p className="project-link"><Link to={url}>View live project</Link></p>
-        <p><Link to="/">&larr; back to all projects</Link></p>
+        <a href={url} className="project-link">View live project</a>
+        <p><Link to="/projects">&larr; back to all projects</Link></p>
     </div>
 );
 

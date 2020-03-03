@@ -1,6 +1,7 @@
 #main.post {
-    margin: 20px 0;
+    margin: 0 auto;
     border-bottom: #afafaf 1px solid;
+    max-width: 40vw; 
 }
 
 #main.post-title {

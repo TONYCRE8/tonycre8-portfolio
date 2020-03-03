@@ -1,11 +1,36 @@
+@font-face {
+    font-family: 'LibreFranklin';
+    src: url("../fonts/LibreFranklin-Bold.ttf");
+}
+
+@font-face {
+    font-family: 'FiraSans';
+    src: url("../fonts/FiraSansCondensed-Light.ttf")
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url("../fonts/Overpass-Light.ttf")    
+}
+
+
 html {
     margin: auto;
     width: 100vw !important;
     scroll-behavior: smooth;
     overflow-x: hidden !important;
 }
+h1,h2,h3 {
+    font-family: 'LibreFranklin', sans-serif;
+    text-transform: uppercase;
+}
+h4,h5,h6,small {
+    font-family: 'FiraSans', sans-serif;
+}
+p, a, li {
+    font-family: 'Overpass', sans-serif;
+}
 .header {
-    background-color: #7fffd4;
     position: absolute;
     left: 0;
     top: 0;
@@ -15,27 +40,37 @@ html {
 .header>.inner-element {
     margin: 10px 0;
 }
-.nav-button {
+
+.nav {
+    display: flex;
     position: absolute;
-    display: block;
-    text-decoration: none;
-    box-shadow: none;
-    text-align: center;
-}
-#title.nav-button {
-    top: 10px;
-    left: 40px;
-}
-#blog.nav-button {
-    width: 120px;
-    height: 30px;
-    top: 10px;
-    right: 40px;
-    color: #363636;
-    border: #363636 1px solid;
-    border-radius: 10px;
+    top: 15px;
+    right: 50px;
 }
 
+.nav-item {
+    font-family: 'FiraSans', sans-serif;
+    text-transform: uppercase;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    box-shadow: none;
+    color: #363636;
+}
+
+.nav-item::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    transition: width .3s;
+    background: #363636;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
 /*Footer section*/
 
 .footer {
@@ -44,6 +79,10 @@ html {
     bottom: 1;
     height: 50px;
     width: 100vw;
-    background: #363636;
     color: #fff;
+    text-align: center;
+    font-family: 'FiraSans', sans-serif;
+}
+.footer>button {
+    margin: 0 auto;
 }

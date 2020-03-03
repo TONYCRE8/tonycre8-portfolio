@@ -2,9 +2,9 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Posts from "../components/blog/posts"
+import Layout from "../components/layout"
 
 import { rhythm } from "../utils/typography"
 import "../styles/blog.css"
@@ -14,13 +14,11 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <>
-      <Layout location={location} title={siteTitle}>
+    <Layout width={`${rhythm(24)}`}>
         <SEO title="All posts" />
         <Bio />
         <Posts data={data} id="blog"/>
-      </Layout>
-      </>
+    </Layout>
   )
 }
 
