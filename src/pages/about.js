@@ -8,10 +8,10 @@ import { rhythm } from "../utils/typography"
 export default function About() {
 
     return (
-        <Layout width={`${rhythm(24)}`}>
+        <Layout width={`${rhythm(24)}`} right="auto" left="auto">
             <h1 style={{marginBottom: 0, textAlign: "center"}}>Testimonials</h1>
             <div class="testimonial-view">
-                <TestimonialView limit={3}/>
+                <TestimonialView/>
             </div>
         </Layout>
     )

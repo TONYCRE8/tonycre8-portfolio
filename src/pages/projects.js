@@ -7,8 +7,9 @@ import { rhythm } from "../utils/typography"
 
 export default function Projects() {
     return (
-        <Layout width={`${rhythm(32)}`}>
+        <Layout width={`${rhythm(32)}`} right="auto" left="auto">
             <SEO title="Projects" />
+            <h1 style={{margin: 0}}>Projects</h1>
             <ProjectPreview limit={1000}/>
         </Layout>
     )

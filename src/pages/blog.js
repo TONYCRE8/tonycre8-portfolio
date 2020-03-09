@@ -14,7 +14,7 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout width={`${rhythm(24)}`}>
+    <Layout width={`${rhythm(24)}`} right="auto" left="auto">
         <SEO title="All posts" />
         <Bio />
         <Posts data={data} id="blog"/>

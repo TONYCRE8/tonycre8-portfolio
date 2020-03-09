@@ -7,3 +7,22 @@
 #main.post-title {
     margin: 0;
 }
+
+.index-banner {
+    height: 100vh;
+    width: 100vw;
+    padding: 150px 200px;
+}
+
+.index-banner > h1 {
+    font-size: 4rem;
+    margin: 0;
+    line-height: 3.5rem;
+}
+.index-banner > h2 {
+    margin: 0;
+}
+.index-banner > img {
+    float: right;
+    margin: 0;
+}

@@ -80,6 +80,7 @@ p, a, li {
     height: 50px;
     width: 100vw;
     color: #fff;
+    background: #444444;
     text-align: center;
     font-family: 'FiraSans', sans-serif;
 }
