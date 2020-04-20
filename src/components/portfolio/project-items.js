@@ -3,19 +3,18 @@ import {Link} from 'gatsby';
 import Image from 'gatsby-image'
 import "../../styles/projects.css"
 
-export default function ProjectItems({ slug, imageData, title, description}) {
+export default function ProjectItems({ imageData, title, date, description, url}) {
     return (
-        <div className="project-item">
-            <Link to={`projects/${slug}`}>
-                <Image sizes={imageData} alt={title} className="project-image"/>
-            </Link>
+        <a className="project-item" href={`${url}`}>
+            <Image sizes={imageData} alt={title} className="project-image"/>
             <div className="project-info">
                 <h2 className="project-title">
-                    <Link to={`projects/${slug}`}>{title}</Link>
+                {title}
                 </h2>
+                <small className="project-date">{date}</small>
                 <p className="project-description">{description}</p>
-                <p className="project-link"><Link to={`projects/${slug}`}>View project &rarr;</Link></p>
+                <p className="project-link">Click to view &rarr;</p>
             </div>
-        </div>
+        </a>
     )
 }

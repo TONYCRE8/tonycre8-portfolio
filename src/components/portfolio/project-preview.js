@@ -9,8 +9,9 @@ export default function ProjectPreview( {limit} ) {
             edges {
               node {
                 title
-                slug
+                url
                 description
+                date (formatString: "MMMM - YYYY")
                 image {
                   childImageSharp {
                     fluid(maxWidth: 400) {
@@ -31,14 +32,16 @@ export default function ProjectPreview( {limit} ) {
             {projects.slice(0, limit).map(({ node: project }) => {
                 const title=project.title;
                 const description=project.description;
-                const slug=project.slug;
+                const date=project.date;
+                const url=project.url;
                 const imageData=project.image.childImageSharp.fluid;
     
                 return(
                 <ProjectItems 
                 title={title}
                 description={description}
-                slug={slug}
+                date={date}
+                url={url}
                 imageData={imageData}/>
                 )
             })}

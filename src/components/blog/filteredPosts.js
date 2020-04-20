@@ -9,6 +9,9 @@ export default function Posts({ data, location, style, id, filter }) {
     return (
         <>
           {posts.map(({ node }) => {
+            if (filter.toLowerCase() !== 'everything' && !node.frontmatter.tags.includes(filter)) {
+              return null
+            }
             const title = node.frontmatter.title || node.fields.slug
             return (
               <article key={node.fields.slug} className="post" id={id}>

@@ -27,13 +27,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               }
           }
         }
-        projectItems: allProjectsJson {
-            edges {
-                node {
-                    slug
-                }
-            }
-        }
       }
     `
   )
@@ -60,19 +53,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
-
-  // Create project pages
-  const projects = result.data.projectItems.edges;
-
-  projects.forEach(({ node: project }) => {
-    const slug = project.slug;
-
-    actions.createPage({
-      path: `projects/${slug}`,
-      component: require.resolve('./src/templates/project-page.js'),
-      context: { slug },
-    });
-  });
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

@@ -1,11 +1,22 @@
-.project-item {
-    display: grid;
-    height: 150px;
+.project-head {
+    width: 100vw;
+    height: 220px;
+}
+.project-list {
+    width: 80vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
     margin: 0 auto;
-    grid-template-columns: 276px 1fr;
-    grid-template-areas: 
-    'img info';
-    margin-bottom: 15px;
+}
+.project-item {
+    display: block;
+    height: 150px;
+    width: 267px;
+    margin: 15px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: none;
 }
 
 .project-item a {
@@ -14,11 +25,24 @@
 
 .project-info {
     grid-area: info;
-    display: grid;
+    opacity: 0;
     grid-template-areas: 
     'title'
+    'date'
     'desc'
     'link';
+    margin-top: -150px;
+    transition: 0.5s;
+    padding: 10px;
+    padding-top: 0;
+    color: #fff;
+}
+.project-item:hover {
+    cursor: pointer;
+}
+.project-item:hover>.project-info {
+    opacity: 1;
+    padding-top: 10px;
 }
 
 .project-image {
@@ -28,11 +52,29 @@
     object-fit: fill;
     text-decoration: none;
     box-shadow: none;
+    z-index: -1;
+    filter: none;
+    transition: 0.5s;
+}
+
+.project-item:hover .project-image {
+    filter: blur(10px) brightness(70%) saturate(0);
 }
 
 .project-title {
     grid-area: title;
     text-decoration: none;
+    margin: 0;
+    margin-bottom: -10px;
+    color: #fff;
+}
+
+.project-title a, .project-link a {
+    color: #fff;
+}
+
+.project-date {
+    grid-area: date;
     margin: 0;
 }
 
@@ -44,4 +86,10 @@
 .project-link {
     grid-area: link;
     margin: 0;
+}
+.project {
+    width: auto;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
 }

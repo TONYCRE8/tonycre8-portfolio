@@ -4,6 +4,11 @@
 }
 
 @font-face {
+    font-family: 'LibreFranklinExtra';
+    src: url("../fonts/LibreFranklin-ExtraBold.ttf");
+}
+
+@font-face {
     font-family: 'FiraSans';
     src: url("../fonts/FiraSansCondensed-Light.ttf")
 }
@@ -20,15 +25,24 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden !important;
 }
-h1,h2,h3 {
+h1,h2,h3,label {
     font-family: 'LibreFranklin', sans-serif;
     text-transform: uppercase;
+    margin: 0;
 }
 h4,h5,h6,small {
     font-family: 'FiraSans', sans-serif;
+    margin: 0;
 }
-p, a, li {
+p, a, li, input, textarea {
     font-family: 'Overpass', sans-serif;
+    margin: 0;
+}
+#link {
+    color: #fff
+}
+#altlink { 
+    color: var(--secondary)
 }
 .header {
     position: absolute;
@@ -65,24 +79,82 @@ p, a, li {
     width: 0;
     height: 2px;
     transition: width .3s;
-    background: #363636;
+    background: var(--secondary);
 }
 
 .nav-item:hover::after {
     width: 100%;
 }
+
+.theme-select {
+    display: block;
+    width: auto;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+
+.theme-colour {
+    width: 25px;
+    height: 25px;
+    margin: 0 2px;
+    border: none;
+}
+.inner-element {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#wave {
+    width: 100vw;
+}
+
+/* Button */
+
+.button {
+    display: block;
+    font-family: 'FiraSans';
+}
+
+/* Form */
+
+.form > fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: none;
+}
+.form input[type="text"] {
+    border: none;
+}
+.form textarea {
+    border: none;
+}
+.form button {
+    margin: 0 auto;
+}
+.form input[type="text"]:focus {
+    outline: none;
+}
+
+.error-message {
+    display: block;
+}
+
 /*Footer section*/
 
 .footer {
     position: absolute;
     left: 0;
     bottom: 1;
-    height: 50px;
+    height: 60px;
     width: 100vw;
+    padding-top: 10px;
     color: #fff;
-    background: #444444;
+    background: var(--dark);
     text-align: center;
     font-family: 'FiraSans', sans-serif;
+    line-height: 1rem;
 }
 .footer>button {
     margin: 0 auto;
