@@ -35,14 +35,7 @@ const Bio = () => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <div
-      style={{
-        display: `flex`,
-        marginTop: rhythm(1),
-        marginBottom: rhythm(0.5),
-        borderBottom: `#4f4f4f 2px solid`
-      }}
-    >
+    <div>
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
@@ -58,7 +51,7 @@ const Bio = () => {
       />
       <p>
         Written by <strong>{author}</strong> who makes stuff in Peterborough.
-        {` `} You should follow him on 
+        {` `} You should follow him on {` `}
         <a id="altlink" href={`https://twitter.com/${social.twitter}`}>Twitter
         </a>
         {` `}or{` `}

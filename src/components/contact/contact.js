@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import validate from "./validators";
+import {Slide} from 'react-reveal'
 
 export default function Contact() {
   const [{ mail, name, subject, message }, setFormValues] = useState({
@@ -52,7 +53,7 @@ export default function Contact() {
               placeholder="Jane Doe..."
               required
             />
-            {name.length > 2 && !isValidName && <p className="error-message">Invalid name!</p>}
+            {name.length > 2 && !isValidName && <Slide down><p className="error-message">Invalid name!</p></Slide>}
           <label>
             Email
           </label>
@@ -63,7 +64,7 @@ export default function Contact() {
               placeholder="janedoe@doemail.com..."
               required
             />
-            {mail.length > 2 && !isValidMail && <p className="error-message">Invalid mail!</p>}
+            {mail.length > 2 && !isValidMail && <Slide down><p className="error-message">Invalid mail!</p></Slide>}
           <label>
             Subject
           </label>

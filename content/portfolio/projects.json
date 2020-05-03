@@ -8,27 +8,19 @@
         "date": "2019-10-21T13:37:27+00:00"
     },
     {
-        "title": "Project 2",
-        "slug": "project-2",
-        "url": "https://example.com/",
-        "image": "./images/project2.jpg",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id semper lectus. Aenean lorem erat, sollicitudin et ex in, porttitor sodales nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-        "date": "2020-02-22T13:37:27+00:00"
+        "title": "Project2020",
+        "slug": "project2020",
+        "url": "https://beta.project2020.co.uk/",
+        "image": "./images/project2020.jpg",
+        "description": "Website done for a music group, including a custom media player.",
+        "date": "2019-10-21T13:37:27+00:00"
     },
     {
-        "title": "Project 3",
-        "slug": "project-3",
-        "url": "https://example.com/",
-        "image": "./images/project3.jpg",
-        "description": "Woohoo timeeee",
-        "date": "2020-02-23T13:37:27+00:00"
-    },
-    {
-        "title": "Project 4",
-        "slug": "project-4",
-        "url": "https://example.com/",
-        "image": "./images/project4.jpg",
-        "description": "Woohoo timeeee",
-        "date": "2020-02-24T13:37:27+00:00"
+        "title": "Project2020",
+        "slug": "project2020",
+        "url": "https://beta.project2020.co.uk/",
+        "image": "./images/project2020.jpg",
+        "description": "Website done for a music group, including a custom media player.",
+        "date": "2019-10-21T13:37:27+00:00"
     }
 ]

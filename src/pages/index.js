@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import { Link, graphql } from "gatsby"
-import TextLoop from "react-text-loop";
+import TextLoop from "react-text-loop"
+import {Fade, Slide} from 'react-reveal'
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -31,67 +32,84 @@ const SiteIndex = ({ data, location}) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout width={`${rhythm(45)}`} padding="24px 0" left="0" right="0">
+    <Layout width={'100%'} padding="24px 0" left="0" right="0">
         <SEO title="Home page" />
         <div className="index-banner">
-          <img src={banner}/>
-          <h1>Anthony<br />Ingall</h1>
-          <RollText></RollText>
-        </div>
-        <div className="biography"> 
-            <div className="inner-element">
-              <h1>WHO?</h1>
-              <p>
-                To be fair, that's quite a solid question to be asking at this point.
-                <br></br>
-                To keep a long story short, I'm working up as a Front End Web Developer in Peterborough, England.
-                <br></br>
-                But if you want to know more, you can take a look <Link id="link" to={'/about'}>here</Link> to find out more.
-              </p>
-            </div>
-        </div>
-        <div style={{
-          maxWidth: `${rhythm(32)}`,
-          margin: "0 auto",
-        }}>
-          <h1 //style={{
-            // color: '#fff',
-            // WebkitTextStroke: '1px var(--secondary)',
-            // fontFamily: 'LibreFranklinExtra'
-          //}}
-          >Portfolio Work</h1>
-          <p>Here's a couple of the projects I've worked on throughout my time, either for businesses or just small projects done for fun.</p>
-          <div style={{
-            display: 'flex',
-            flexFlow: 'row wrap',
-            justifyContent: 'center'
-          }}>
-            <ProjectPreview limit={3}/>
+          <div className="wall" id="left">
+            <Slide left>
+              <div className="inner-element">
+                <h1>Anthony</h1>
+                <h1>Ingall</h1>
+              </div>
+            </Slide>
           </div>
-          <Link class="button"
-          to={`/projects`}>
-            More Projects
-          </Link>
+          <div className="wall" id="right">
+            <div className="inner-element">
+              <RollText></RollText>
+            </div>
+          </div>
+          <Slide right>
+            <img src={banner}/>
+          </Slide>
         </div>
-        <div style={{
-          maxWidth: `${rhythm(16)}`,
-          margin: "0 auto",
-          textAlign: "center",
-        }}>
-          <h1>Latest Article</h1>
-          <Posts data={data} id="main" />
-          <Link class="button" style={{margin: "10px auto"}}
-          to={`/blog`}>
-            More Articles
-          </Link>
+        <Fade bottom duration={800}>
+        <div className="who"> 
+            <div className="who-box">
+              <div className="inner-element">
+                <h1>WHO?</h1>
+                <p>
+                  To be fair, that's quite a solid question to be asking at this point.
+                  <br></br>
+                  To keep a long story short, I'm working up as a Front End Web Developer in Peterborough, England.
+                </p>
+              </div>
+            </div>
+            <div className="button"><Link to={'/about'}>Learn more &#8594;</Link></div>
+          </div>
+        </Fade>
+        <div className="portfolio">
+            <div className="inner-element">
+              <h1>Portfolio Work</h1>
+              <p>Here's a couple of the projects I've worked on throughout my time, either for businesses or just small projects done for fun.</p>
+                <div style={{
+                  display: 'flex',
+                  flexFlow: 'row wrap',
+                  justifyContent: 'center'}}>
+                  <ProjectPreview limit={3}/>
+              </div>
+            <div className="button" id="alt"><Link to={'/projects'}>All work &#8594;</Link></div>
+          </div>
+        </div>
+        <div className="article">
+          <div className="post">
+            <Posts data={data} id="main" />
+          </div>
+          <div className="side-text">
+            <h1>blog</h1>
+            <hr></hr>
+            <p>Did you know I write blogs? Interesting right?
+            I've been writing these since the start of the year, and I upload an article at least once a week.
+            Sometimes I can't upload, but these article uploads have been pretty consistent for the most part.
+              <br></br>
+            The articles I write are presented on a variety of topics.
+            Anywhere from web development technologies, to fashion theory and application, to general lifestyle articles!
+            If any of that sounds interesting to you or you're just cuirous, make sure to take a look!
+            </p>
+            <div className="button"><Link to={'/blog'}>More articles</Link></div>          
+          </div>
         </div>
         <div class="contact">
-          <div class="inner-element" style={{maxWidth: `${rhythm(16)}`}}>
+          <div className="inner-element">
             <h1>Contact me!</h1>
             <p>Are you slightly curious yet? Perhaps you have an idea or project that needs fulfilling? If so, <strong>get in touch!</strong></p>
             <Contact />
           </div>
         </div>
+        <div style={{
+          background: 'var(--primary)',
+          height: '320px',
+          width: '100%'
+        }}></div>
     </Layout>
   )
 }

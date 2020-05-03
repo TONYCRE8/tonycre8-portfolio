@@ -1,16 +1,44 @@
-.testimonial-view {
-    margin: 0 auto;
+.about-panel {
+    margin: 50px auto;
+    width: 60%;
+    height: 450px;
+    background: var(--primary);
+    transform: skewX(-12deg);
+}
+
+.about-panel>.inner-element {
+    padding: 50px 70px;
+    transform: skewX(12deg);
     display: flex;
-    justify-content: center;
+}
+
+.about-panel .poster-image {
+    width: 40%;
+}
+
+.poster-image img {
+    width: 200px
+}
+
+.about-panel .side-text {
+    text-align: right;
+    width: 60%;
+}
+
+.testimonial-view {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
+    margin: 0 auto;
     margin-bottom: 50px;
+    text-align: center;
 }
 
 .testimonial {
     display: block;
     width: 400px;
     height: 275px;
-    text-align: center;
 }
 .profile {
     width: 125px;

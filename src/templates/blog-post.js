@@ -1,10 +1,14 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import Img from 'gatsby-image'
+import {Fade} from 'react-reveal'
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+
+import "../styles/blog-article.css"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -12,64 +16,46 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { previous, next } = pageContext
 
   return (
-    <Layout width={`${rhythm(24)}`}>
+    <Layout width={'100%'} left={'auto'} right={'auto'}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <Link to={`/blog`}>Back</Link>
-      <article>
-        <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
-          {post.frontmatter.tags.map(tag => (<small>#{tag} </small>))}
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
+      <Link to={`/blog`}>&larr; Back</Link>
+        <article id="article">
+          <Fade up>
+            <Img sizes={post.frontmatter.thumbnail.childImageSharp.sizes}></Img>
+          </Fade>
+          <Fade top cascade delay={800}>
+            <header>
+              <h1>
+                {post.frontmatter.title}
+              </h1>
+              <p>
+                {post.frontmatter.date}
+              </p>
+              {post.frontmatter.tags.map(tag => (<small>#{tag} </small>))}
+            </header>
+          </Fade>
+            <section dangerouslySetInnerHTML={{ __html: post.html }} />
+            <hr/>
+            <footer>
+              <Bio />
+            </footer>  
+        </article>
 
       <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+        <ul>
           <li>
             {previous && (
-              <Link to={`blog${previous.fields.slug}`} rel="prev">
+              <Link to={`blog${previous.fields.slug}`} rel="prev" id="prev-post">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={`blog${next.fields.slug}`} rel="next">
+              <Link to={`blog${next.fields.slug}`} rel="next" id="next-post">
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -95,9 +81,16 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "dddd Do of MMMM, YYYY")
         tags
         description
+        thumbnail {
+          childImageSharp {
+            sizes(maxWidth: 630) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
     }
   }

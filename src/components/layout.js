@@ -30,6 +30,7 @@ const Layout = ({ title, children, width, padding, right, left }) => {
       :root {
         --primary: ${themes[theme].primary};
         --secondary: ${themes[theme].secondary};
+        --shade: ${themes[theme].shade};
         --dark: ${themes[theme].dark};
       }
     `}
@@ -46,8 +47,21 @@ const Layout = ({ title, children, width, padding, right, left }) => {
       >
         <header className="header">
           <div className="inner-element">
+              <div className="logo">
+                  <img src={Logo}/>
+              </div>
+              <Nav />
+          </div>
+        </header>
+        <main>{children}</main>
+        <footer>
+          <div className="footer">
+            TONYCRE8© {new Date().getFullYear()}, Built with {` `}
+            <a id="link" href="https://www.gatsbyjs.org">Gatsby</a><br></br>
+            View this project on {` `}
+            <a id="link" href="https://www.gatsbyjs.org">GitHub</a>
             <div className="theme-select">
-              <p style={{width: "60px", margin: 0}}>Themes:</p>
+              <p>Change the page theme:</p>
               <button
                 className="theme-colour"
                 name="theme-colour"
@@ -89,26 +103,6 @@ const Layout = ({ title, children, width, padding, right, left }) => {
                 }}
               />      
             </div>
-              <Link to={`/`} style={{
-                  display: "block",
-                  boxShadow: "none",
-                  textAlign: "center"
-                  }}>
-                  <img src={Logo} style={{
-                      height: "60px",
-                      marginBottom: "0"
-                  }}/>
-              </Link>
-              <Nav />
-          </div>
-        </header>
-        <main>{children}</main>
-        <footer>
-          <div className="footer">
-            TONYCRE8© {new Date().getFullYear()}, Built with {` `}
-            <a id="link" href="https://www.gatsbyjs.org">Gatsby</a><br></br>
-            View this project on {` `}
-            <a id="link" href="https://www.gatsbyjs.org">GitHub</a>
           </div>
         </footer>
       </div>

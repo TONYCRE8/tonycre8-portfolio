@@ -19,6 +19,7 @@ const Filter = ({data, posts}) => {
   const categories = posts.map(({ node }) => {
     const tag = node.frontmatter.tags.map(tag => (!tags.includes(tag) ?  tags.push(tag) : '' ))
   })
+  tags.sort();
 
   const filterPosts = (value) => {
     setCurrTag(value)
@@ -27,11 +28,15 @@ const Filter = ({data, posts}) => {
 
   return(
     <>
-    <select onChange={e => filterPosts(e.target.value)}>
-      <option>Everything</option>
-      {tags.map(tag => (<option value={tag}>{tag}</option>))}
-    </select>
-    <Posts data={data} filter={currTag} id="blog"/>
+      <div className="filter">
+        <p>"I want to read about...</p>
+        <select onChange={e => filterPosts(e.target.value)}>
+          <option>Everything</option>
+          {tags.map(tag => (<option value={tag}>{tag}</option>))}
+        </select>
+        <p>"</p>
+      </div>
+      <Posts data={data} filter={currTag} id="blog"/>
     </>
   )
 }
@@ -42,11 +47,12 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout width={`${rhythm(24)}`} right="auto" left="auto">
+    <Layout width={'100%'} right="auto" left="auto">
         <SEO title="All posts" />
-        <Bio />
-        <h2>What are you interested in?: </h2>
-        <Filter data={data} posts={posts}/>
+        <div className="blog-page">
+          <h1 style={{textAlign: 'center'}}>Blog articles</h1>
+          <Filter data={data} posts={posts}/>
+        </div>
     </Layout>
   )
 }
@@ -68,7 +74,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "dddd, Do of MMMM YYYY")
+            date(formatString: "dddd Do of MMMM, YYYY")
             title
             tags
             description
