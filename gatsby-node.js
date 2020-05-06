@@ -7,17 +7,29 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
   
   const result = await graphql(
-    `{
-      allProjectsJson {
+    `
+    {
+      allMarkdownRemark(
+          sort: {
+              fields: [frontmatter___date],
+              order: DESC
+          }
+          limit: 1000
+      ) {
           edges {
-            node {
-                slug,
-                title
-            }
+              node {
+                  fields {
+                      slug
+                  }
+                  frontmatter {
+                      title
+                  }
+              }
           }
         }
       }
-    `)
+    `
+  )
 
   if (result.errors) {
     reporter.panic('There was a problem loading your projects!');
@@ -25,19 +37,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   // Create blog posts pages.
-  console.log(JSON.stringify(result, null, 5));
-  const posts = result.data.allProjectsJson.edges;
-  //const posts = result.data.allMarkdownRemark.edges;
+  //console.log(JSON.stringify(result, null, 5));
+  //const posts = result.data.blog.edges;
+  const posts = result.data.allMarkdownRemark.edges;
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
 
     createPage({
-      path: `blog${post.node.slug}`,
+      path: `blog${post.node.fields.slug}`,
       component: blogPost,
       context: {
-        slug: post.node.slug,
+        slug: post.node.fields.slug,
         previous,
         next,
       }
@@ -53,7 +65,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value
+      value,
     })
   }
 }

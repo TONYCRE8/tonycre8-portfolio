@@ -57,15 +57,37 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex;
+export default BlogIndex
 
-// export const pageQuery = graphql(`
-//   query {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//   }
-// `
-// );
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "dddd Do of MMMM, YYYY")
+            title
+            tags
+            description
+            thumbnail {
+              childImageSharp {
+                sizes(maxWidth: 630) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
