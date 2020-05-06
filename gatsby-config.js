@@ -10,6 +10,9 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -41,9 +44,6 @@ module.exports = {
     {
       resolve: `gatsby-remark-relative-images`,
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-json`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
