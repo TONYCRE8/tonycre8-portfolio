@@ -6,16 +6,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
   
-  const result = await graphql(
-    `
+  const result = await graphql(`
     {
-      allMarkdownRemark(
-          sort: {
-              fields: [frontmatter___date],
-              order: DESC
-          }
-          limit: 1000
-      ) {
+      blog:allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC} limit: 1000) {
           edges {
               node {
                   fields {
@@ -27,9 +20,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               }
           }
         }
+      projects:allProjectsJson {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
       }
-    `
-  )
+    `)
 
   if (result.errors) {
     reporter.panic('There was a problem loading your projects!');
