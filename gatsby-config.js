@@ -6,13 +6,25 @@ module.exports = {
     siteUrl: `https://www.tonycre8.co.uk`,
     social: {
       twitter: `tonycre8`,
-      github: 'tonyingall'
+      github: "tonyingall",
     },
   },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-transformer-json`,
+      options: {
+        path: `${__dirname}/content/about/*.json`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-json`,
+      options: {
+        path: `${__dirname}/content/portfolio/*.json`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -1,26 +1,26 @@
 [
-    {
-        "name": "Andy Sanders",
-        "position": "Cambridgeshire County Council",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non odio posuere, sollicitudin ipsum eu, elementum eros. Nullam sit amet auctor felis. Proin feugiat dui turpis, a dapibus magna tincidunt at. Maecenas justo justo, bibendum ornare rutrum et, condimentum vel tellus. Ut maximus placerat ex.",
-        "image": "./images/pfp_andy.jpg"
-    },
-    {
-        "name": "Jess Something",
-        "position": "Cambridgeshire County Council",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non odio posuere, sollicitudin ipsum eu, elementum eros. Nullam sit amet auctor felis. Proin feugiat dui turpis, a dapibus magna tincidunt at. Maecenas justo justo, bibendum ornare rutrum et, condimentum vel tellus. Ut maximus placerat ex.",
-        "image": "./images/pfp_andy.jpg"
-    },
-    {
-        "name": "Andy Sanders",
-        "position": "Cambridgeshire County Council",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non odio posuere, sollicitudin ipsum eu, elementum eros. Nullam sit amet auctor felis. Proin feugiat dui turpis, a dapibus magna tincidunt at. Maecenas justo justo, bibendum ornare rutrum et, condimentum vel tellus. Ut maximus placerat ex.",
-        "image": "./images/pfp_andy.jpg"
-    },
-    {
-        "name": "Andy Sanders",
-        "position": "Cambridgeshire County Council",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non odio posuere, sollicitudin ipsum eu, elementum eros. Nullam sit amet auctor felis. Proin feugiat dui turpis, a dapibus magna tincidunt at. Maecenas justo justo, bibendum ornare rutrum et, condimentum vel tellus. Ut maximus placerat ex.",
-        "image": "./images/pfp_andy.jpg"
-    }
+  {
+    "name": "Andy Sanders",
+    "position": "Cambridgeshire County Council",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non odio posuere, sollicitudin ipsum eu, elementum eros. Nullam sit amet auctor felis. Proin feugiat dui turpis, a dapibus magna tincidunt at. Maecenas justo justo, bibendum ornare rutrum et, condimentum vel tellus. Ut maximus placerat ex.",
+    "image": "./../assets/pfp_andy.jpg"
+  },
+  {
+    "name": "Jess Something",
+    "position": "Cambridgeshire County Council",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non odio posuere, sollicitudin ipsum eu, elementum eros. Nullam sit amet auctor felis. Proin feugiat dui turpis, a dapibus magna tincidunt at. Maecenas justo justo, bibendum ornare rutrum et, condimentum vel tellus. Ut maximus placerat ex.",
+    "image": "./../assets/pfp_andy.jpg"
+  },
+  {
+    "name": "Andy Sanders",
+    "position": "Cambridgeshire County Council",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non odio posuere, sollicitudin ipsum eu, elementum eros. Nullam sit amet auctor felis. Proin feugiat dui turpis, a dapibus magna tincidunt at. Maecenas justo justo, bibendum ornare rutrum et, condimentum vel tellus. Ut maximus placerat ex.",
+    "image": "./../assets/pfp_andy.jpg"
+  },
+  {
+    "name": "Andy Sanders",
+    "position": "Cambridgeshire County Council",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non odio posuere, sollicitudin ipsum eu, elementum eros. Nullam sit amet auctor felis. Proin feugiat dui turpis, a dapibus magna tincidunt at. Maecenas justo justo, bibendum ornare rutrum et, condimentum vel tellus. Ut maximus placerat ex.",
+    "image": "./../assets/pfp_andy.jpg"
+  }
 ]

@@ -4,41 +4,43 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`);
-  
+  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+
   const result = await graphql(`
     {
-      blog:allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC} limit: 1000) {
-          edges {
-              node {
-                  fields {
-                      slug
-                  }
-                  frontmatter {
-                      title
-                  }
-              }
-          }
-        }
-      projects:allProjectsJson {
-          edges {
-            node {
+      blog: allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            fields {
               slug
+            }
+            frontmatter {
+              title
             }
           }
         }
       }
-    `)
+      projects: allProjectsJson {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
 
   if (result.errors) {
-    reporter.panic('There was a problem loading your projects!');
-    return;
+    reporter.panic("There was a problem loading your projects!")
+    return
   }
 
   // Create blog posts pages.
-  //console.log(JSON.stringify(result, null, 5));
-  //const posts = result.data.blog.edges;
-  const posts = result.data.allMarkdownRemark.edges;
+  const posts = result.data.blog.edges
+  // localhost:8000/__graphql
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
@@ -51,7 +53,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         slug: post.node.fields.slug,
         previous,
         next,
-      }
+      },
     })
   })
 }
