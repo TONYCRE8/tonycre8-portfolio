@@ -16,13 +16,13 @@ module.exports = {
     {
       resolve: `gatsby-transformer-json`,
       options: {
-        path: `${__dirname}/content/about/*.json`,
+        path: `${__dirname}/content/about/`,
       },
     },
     {
       resolve: `gatsby-transformer-json`,
       options: {
-        path: `${__dirname}/content/portfolio/*.json`,
+        path: `${__dirname}/content/portfolio/`,
       },
     },
     {
@@ -32,7 +32,6 @@ module.exports = {
         name: `blog`,
       },
     },
-    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
