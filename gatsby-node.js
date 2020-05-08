@@ -23,13 +23,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      projects: allProjectsJson {
-        edges {
-          node {
-            slug
-          }
-        }
-      }
     }
   `)
 
@@ -40,7 +33,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Create blog posts pages.
   const posts = result.data.blog.edges
-  // localhost:8000/__graphql
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node

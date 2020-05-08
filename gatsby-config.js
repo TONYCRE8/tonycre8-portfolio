@@ -16,13 +16,13 @@ module.exports = {
     {
       resolve: `gatsby-transformer-json`,
       options: {
-        path: `${__dirname}/content/about/`,
+        path: `./content/about/`,
       },
     },
     {
       resolve: `gatsby-transformer-json`,
       options: {
-        path: `${__dirname}/content/portfolio/`,
+        path: `./content/portfolio/`,
       },
     },
     {
@@ -56,7 +56,6 @@ module.exports = {
     {
       resolve: `gatsby-remark-relative-images`,
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
