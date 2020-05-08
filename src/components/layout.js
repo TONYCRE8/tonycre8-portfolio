@@ -1,22 +1,18 @@
-import React, {useState, useEffect} from "react"
-import {Link} from 'gatsby'
-import Nav from './nav'
-import Logo from '../../content/assets/logo.png'
-import themes from '../styles/themes'
-
-import { rhythm, scale } from "../utils/typography"
+import React, { useState, useEffect } from "react"
+import Nav from "./nav"
+import Logo from "../../content/assets/logo.png"
+import themes from "../styles/themes"
 
 const Layout = ({ title, children, width, padding, right, left }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const [theme, setTheme] = useState('pink')
+  const [theme, setTheme] = useState("pink")
 
   const handleThemeChange = e => {
-    localStorage.setItem('theme', e.target.value)
+    localStorage.setItem("theme", e.target.value)
     setTheme(e.target.value)
-  };
+  }
 
   useEffect(() => {
-    const localTheme = localStorage.getItem('theme')
+    const localTheme = localStorage.getItem("theme")
 
     if (localTheme) {
       setTheme(localTheme)
@@ -25,8 +21,8 @@ const Layout = ({ title, children, width, padding, right, left }) => {
 
   return (
     <>
-    <style key={`style-${theme}`}>
-    {`
+      <style key={`style-${theme}`}>
+        {`
       :root {
         --primary: ${themes[theme].primary};
         --secondary: ${themes[theme].secondary};
@@ -34,7 +30,7 @@ const Layout = ({ title, children, width, padding, right, left }) => {
         --dark: ${themes[theme].dark};
       }
     `}
-    </style>
+      </style>
       <div
         style={{
           marginLeft: `${left}`,
@@ -47,19 +43,24 @@ const Layout = ({ title, children, width, padding, right, left }) => {
       >
         <header className="header">
           <div className="inner-element">
-              <div className="logo">
-                  <img src={Logo}/>
-              </div>
-              <Nav />
+            <div className="logo">
+              <img src={Logo} alt="Tonycr8 Logo" />
+            </div>
+            <Nav />
           </div>
         </header>
         <main>{children}</main>
         <footer>
           <div className="footer">
             TONYCRE8© {new Date().getFullYear()}, Built with {` `}
-            <a id="link" href="https://www.gatsbyjs.org">Gatsby</a><br></br>
+            <a id="link" href="https://www.gatsbyjs.org">
+              Gatsby
+            </a>
+            <br></br>
             View this project on {` `}
-            <a id="link" href="https://www.gatsbyjs.org">GitHub</a>
+            <a id="link" href="https://www.gatsbyjs.org">
+              GitHub
+            </a>
             <div className="theme-select">
               <p>Change the page theme:</p>
               <button
@@ -69,7 +70,7 @@ const Layout = ({ title, children, width, padding, right, left }) => {
                 onClick={handleThemeChange}
                 alt="pink"
                 style={{
-                  backgroundColor: '#EDC4E6'
+                  backgroundColor: "#EDC4E6",
                 }}
               />
               <button
@@ -79,7 +80,7 @@ const Layout = ({ title, children, width, padding, right, left }) => {
                 onClick={handleThemeChange}
                 alt="purple"
                 style={{
-                  backgroundColor: '#D2CAF7'
+                  backgroundColor: "#D2CAF7",
                 }}
               />
               <button
@@ -89,9 +90,9 @@ const Layout = ({ title, children, width, padding, right, left }) => {
                 onClick={handleThemeChange}
                 alt="blue"
                 style={{
-                  backgroundColor: '#88CCF1'
+                  backgroundColor: "#88CCF1",
                 }}
-              />  
+              />
               <button
                 className="theme-colour"
                 name="theme-colour"
@@ -99,9 +100,9 @@ const Layout = ({ title, children, width, padding, right, left }) => {
                 onClick={handleThemeChange}
                 alt="yellow"
                 style={{
-                  backgroundColor: '#F8E8B9'
+                  backgroundColor: "#F8E8B9",
                 }}
-              />      
+              />
             </div>
           </div>
         </footer>
