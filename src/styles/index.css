@@ -5,7 +5,7 @@ h3 {
 }
 
 h1 {
-    font-size: 2.75rem;
+    font-size: 2.4rem;
 }
 
 p {
@@ -33,7 +33,7 @@ p {
 
 .index-banner h1 {
     margin: 0;
-    font-size: 2.75rem;
+    font-size: 2.4rem;
     text-align: right;
     margin-right: 5px;
 }
@@ -49,11 +49,11 @@ p {
     height: 170px;
     width: auto;
     right: 15vw;
-    top: 35vh;
+    top: 30vh;
 }
 
 .wall {
-    height: 70vh;
+    height: 65vh;
     width: 50%;
 }
 
@@ -68,7 +68,7 @@ p {
 }
 
 .wall>.inner-element {
-    margin-top: 41vh;
+    margin-top: 35vh;
 }
 
 /*Who area*/
@@ -206,6 +206,10 @@ p {
 
     .wall {
         height: 100vh;
+    }
+
+    .wall>.inner-element {
+        margin-top: 41vh;
     }
 
     /*Who area*/

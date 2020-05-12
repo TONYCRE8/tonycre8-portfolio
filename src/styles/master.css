@@ -18,7 +18,6 @@
     src: url("../fonts/Overpass-Light.ttf")    
 }
 
-
 html {
     scroll-behavior: smooth;
 }
@@ -63,24 +62,62 @@ p, a, li, input, textarea {
 }
 
 .nav {
+    position: fixed;
+    right: 0;
+    width: 0;
+    margin-top: -80px;
+    background: var(--dark);
+    transition: width 0.7s;
+}
+
+.active.nav {
+    width: 80vw;
+    height: 100vh;
+}
+
+.nav-toggle {
+    margin: 0;
+    position: fixed;
+    right: 30px;
+    top: 20px;
+}
+
+.nav-toggle > img {
+    width: 50px;
+    margin-bottom: 0;
+    transition: filter 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045), transform 0.5s ease;
+    mix-blend-mode: difference;
+    transform: rotate(0deg);
+}
+
+.nav.active .nav-toggle > img {
+    filter: brightness(20);
+    transform: rotate(90deg);
+}
+
+.nav-toggle:hover {
+    cursor: pointer;
+}
+
+.nav-items {
     display: flex;
-    justify-content: center;
-    margin-top: -60px;
+    flex-direction: column;
+    padding-top: 80px;
+    height: 100vh;
 }
 
 .nav-item {
     font-family: 'FiraSans', sans-serif;
     text-transform: uppercase;
     display: inline-block;
-    width: 15vw;
-    height: 30px;
+    width: 100%;
+    min-width: 100px;
+    height: 60px;
+    margin: 0 auto;
     text-align: center;
     box-shadow: none;
-    color: #363636;
-}
-
-.nav-item:nth-child(3) {
-    margin-left: 60px;
+    color: #fff;
+    white-space: nowrap;
 }
 
 .nav-item::after {
@@ -229,15 +266,25 @@ p, a, li, input, textarea {
         position: absolute;
         top: 15px;
         right: 50px;
+        width: auto;
+        height: auto;
         margin: 0;
+        background: none;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-items {
+        padding-top: 0;
+        display: flex;
+        flex-direction: row;
     }
     
     .nav-item {
         width: 100px;
-    }
-
-    .nav-item:nth-child(3) {
-        margin-left: 0;
+        color: var(--dark);
     }
     
     .nav-item:hover::after {
