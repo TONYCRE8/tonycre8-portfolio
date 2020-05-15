@@ -18,6 +18,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        thumb={post.frontmatter.thumbnail.childImageSharp.sizes.src}
       />
       <Link to={`/blog`}>&larr; Back</Link>
       <article id="article">

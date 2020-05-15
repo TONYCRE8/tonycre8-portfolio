@@ -26,7 +26,8 @@
 }
 
 .testimonial-view {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -37,7 +38,7 @@
 
 .testimonial {
     display: block;
-    width: 400px;
+    max-width: 400px;
     height: 275px;
 }
 .profile {
