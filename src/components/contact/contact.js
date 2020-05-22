@@ -15,22 +15,18 @@ export default function Contact() {
     setFormValues(previousValues => ({ ...previousValues, [name]: value }))
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    fetch("/", {
-      method: "POST",
-      data: new URLSearchParams({name: name, mail: mail, subject: subject, message: message}).toString(),
-    }).then(() => {
-      alert("Thank you!")
-    })
-
-    setLoading(true)
-
-    setTimeout(() => {
-      setLoading(false)
-    }, 2000)
-
-    event.target.reset()
+    setLoading(true);
+    
+    await fetch('/', {
+      method: 'POST',
+      body: new URLSearchParams({name: name, mail: mail, subject: subject, message: message}).toString()
+    });
+  
+    alert('thank you!');
+  
+    setLoading(false);
   }
 
   const isValidMail = validate.mail(mail)
@@ -42,9 +38,9 @@ export default function Contact() {
   const isValidForm = isValidMail && isValidName && isValidSubject && isValidMessage
 
   return (
-    <form name="contact" onSubmit={handleSubmit} autoComplete="off" className="form" data-netlify="true">
+    <form name="contact" onSubmit={handleSubmit} autoComplete="off" className="form" netlify data-netlify="true" netlify-honeypot="bot-field">
       <fieldset disabled={loading}>
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="bot-field" value="contact" />
         <label for="name" htmlFor="name">Name</label>
         <input
           id="name"
