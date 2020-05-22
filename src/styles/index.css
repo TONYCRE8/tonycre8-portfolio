@@ -1,17 +1,3 @@
-h1,
-h2,
-h3 {
-    color: var(--dark);
-}
-
-h1 {
-    font-size: 2.4rem;
-}
-
-p {
-    line-height: 1.25rem;
-}
-
 #main.post {
     margin: 0 auto;
     max-width: 90vw;
@@ -26,9 +12,10 @@ p {
 
 .index-banner {
     display: flex;
-    height: 105vh;
+    height: 550px;
     flex-flow: row wrap;
-    margin-top: -30vh;
+    margin-top: -250px;
+    margin-bottom: 500px;
 }
 
 .index-banner h1 {
@@ -48,14 +35,14 @@ p {
 
 .index-banner img {
     position: absolute;
-    height: 170px;
+    height: 225px;
     width: auto;
-    right: 15vw;
-    top: 30vh;
+    right: 0;
+    top: 150px;
 }
 
 .wall {
-    height: 65vh;
+    height: 470px;
     width: 50%;
 }
 
@@ -70,20 +57,19 @@ p {
 }
 
 .wall>.inner-element {
-    margin-top: 35vh;
+    margin-top: 275px;
 }
 
 /*Who area*/
 
 .who {
     display: block;
-    height: 90vh;
+    margin: 200px 0;
 }
 
 .who-box {
     margin: 0 auto;
     padding: 30px 15px;
-    margin-top: 20vh;
     width: 70vw;
     transform: skewX(-12deg);
     box-shadow: 7px 10px 20px #dcdcdc;
@@ -108,7 +94,7 @@ p {
 .portfolio {
     transform: skewY(12deg);
     background: var(--secondary);
-    height: 60vh;
+    height: 400px;
 }
 
 .portfolio .inner-element {
@@ -136,8 +122,8 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    height: 150vh;
-    max-width: 90vw;
+    height: 900px;
+    width: 90%;
     margin: 0 auto;
     margin-top: 5vh;
 }
@@ -167,13 +153,14 @@ p {
     display: block;
     background: var(--primary);
     transform: skewY(12deg);
-    height: 80vh;
+    height: auto;
+    max-height: 650px;
     margin-bottom: -30vh;
 }
 
 .contact .inner-element {
     transform: skewY(-12deg);
-    width: 90vw;
+    width: 90%;
     padding-top: 8vh;
 }
 
@@ -188,41 +175,47 @@ p {
     /* Landing area */
 
     .index-banner {
-        height: 115vh;
+        height: 650px;
+        margin-bottom: 250px;
     }
 
     .index-banner h1 {
         font-size: 6rem;
         margin-right: 20px;
+        letter-spacing: -0.4rem;
+        line-height: 5rem;
     }
 
     .index-banner h2 {
         font-size: 3rem;
+        letter-spacing: -0.2rem;
     }
 
     .index-banner img {
         height: 350px;
         right: 20vw;
-        top: 45vh;
+        top: 200px;
     }
 
     .wall {
-        height: 100vh;
+        height: 600px;
     }
 
     .wall>.inner-element {
-        margin-top: 41vh;
+        margin-top: 275px;
     }
 
     /*Who area*/
 
     .who {
         display: block;
-        height: 80vh;
+        height: 200px;
+        margin-bottom: 300px;
     }
 
     .who-box {
         width: 40vw;
+        max-width: 600px;
     }   
 
     /*Portfolio area*/
@@ -234,6 +227,7 @@ p {
 
     .portfolio .inner-element {
         width: 80vw;
+        max-width: 800px;
     }
 
     .portfolio h1 {
@@ -246,13 +240,14 @@ p {
         flex-direction: row;
         height: 100vh;
         margin-top: 20%;
-        max-width: 80vw;
+        max-width: 1000px;
     }
 
     .article>.side-text {
         margin-left: 20px;
         text-align: left;
         justify-content: flex-start;
+        max-width: 600px;
     }
 
     /*Contact*/
@@ -263,5 +258,6 @@ p {
 
     .contact .inner-element {
         width: 40vw;
+        max-width: 650px;
     }
 }

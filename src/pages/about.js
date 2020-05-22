@@ -7,9 +7,9 @@ import image from "../../content/assets/_MG_0393.jpg"
 
 export default function About() {
   return (
-    <Layout width={"100%"} right="auto" left="auto">
+    <Layout width={"100%"} right="0" left="0">
       <Fade up>
-        <div>
+        <div className="about-page">
           <div className="about-panel">
             <div className="inner-element">
               <div className="poster-image">

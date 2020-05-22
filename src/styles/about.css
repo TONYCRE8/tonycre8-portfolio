@@ -1,3 +1,6 @@
+.about-page {
+    overflow-x: hidden;
+}
 .about-panel {
     margin: 50px auto;
     width: 60%;
@@ -26,8 +29,6 @@
 }
 
 .testimonial-view {
-    width: 100%;
-    max-width: 400px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -35,11 +36,10 @@
     margin-bottom: 50px;
     text-align: center;
 }
-
-.testimonial {
-    display: block;
+.slider {
+    width: 90%;
     max-width: 400px;
-    height: 275px;
+    margin: 0 auto;
 }
 .profile {
     width: 125px;

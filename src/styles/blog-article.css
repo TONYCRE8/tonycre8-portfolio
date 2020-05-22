@@ -1,3 +1,9 @@
+.button.back {
+    color: var(--secondary);
+    border-radius: none;
+    background: none;
+}
+
 li {
     list-style-type: none;
 }
@@ -79,6 +85,11 @@ nav > ul li {
 }
 
 @media only screen and (min-width: 768px) {
+    .button.back {
+        position: absolute;
+        left: 100px;
+
+    }
     #article {
         width: 55vw;
     }

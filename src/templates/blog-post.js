@@ -20,7 +20,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
         thumb={post.frontmatter.thumbnail.childImageSharp.sizes.src}
       />
-      <Link to={`/blog`}>&larr; Back</Link>
+      <Fade left delay={2000}>
+        <Link className="button back" to={`/blog`}>&larr; Back</Link>
+      </Fade>
       <article id="article">
         <Fade up>
           <Img sizes={post.frontmatter.thumbnail.childImageSharp.sizes}></Img>

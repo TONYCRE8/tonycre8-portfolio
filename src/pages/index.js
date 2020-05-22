@@ -26,6 +26,7 @@ const RollText = () => {
 }
 
 const SiteIndex = ({ data, location }) => {
+
   return (
     <Layout width={"100%"} padding="24px 0" left="0" right="0">
       <SEO title="Home page" />
@@ -76,7 +77,7 @@ const SiteIndex = ({ data, location }) => {
           <div
             style={{
               display: "flex",
-              flexFlow: "row wrap",
+              flexFlow: "row",
               justifyContent: "center",
             }}
           >
@@ -123,7 +124,7 @@ const SiteIndex = ({ data, location }) => {
       <div
         style={{
           background: "var(--primary)",
-          height: "320px",
+          height: "390px",
           width: "100%",
         }}
       ></div>

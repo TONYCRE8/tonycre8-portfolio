@@ -3,7 +3,6 @@ import {Link} from 'gatsby'
 
 import menu from "../../content/assets/bars.png";
 
-
 export default function Nav() {
     const [hidden, setHidden] = useState(true)
 

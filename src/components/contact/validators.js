@@ -15,7 +15,17 @@ function validateMail(maybeMail) {
   )
 }
 
+function validateSubject(maybeSubject) {
+  return maybeSubject && maybeSubject.length > 5
+}
+
+function validateMessage(maybeMessage) {
+  return maybeMessage && maybeMessage.length > 150
+}
+
 export default {
   mail: validateMail,
   name: validateName,
+  subject: validateSubject,
+  message: validateMessage,
 }

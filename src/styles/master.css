@@ -34,6 +34,20 @@ p, a, li, input, textarea {
     font-family: 'Overpass', sans-serif;
     margin: 0;
 }
+h1,
+h2,
+h3 {
+    color: var(--dark);
+}
+
+h1 {
+    font-size: 2.4rem;
+    letter-spacing: -0.1rem;
+}
+
+p {
+    line-height: 1.25rem;
+}
 #link {
     color: #fff
 }
@@ -71,7 +85,7 @@ p, a, li, input, textarea {
 }
 
 .active.nav {
-    width: 80vw;
+    width: 100vw;
     height: 100vh;
 }
 
@@ -170,6 +184,13 @@ p, a, li, input, textarea {
     padding: 5px;
     text-align: center;
     border-radius: 5px;
+    transition: background 0.3s;
+    box-shadow: none;
+}
+.disabled.button {
+    background: #bbb;
+    color: #fff;
+    cursor: not-allowed;
 }
 .button a {
     font-family: 'FiraSans', sans-serif;
@@ -207,6 +228,18 @@ p, a, li, input, textarea {
     border-radius: 3px;
     padding: 2px 5px;
 }
+
+.character-limit {
+    position: absolute;
+    right: 5px;
+    margin-top: -20px;
+    color: #bbb;
+}
+
+.character-limit.error {
+    color: #ff2255;
+}
+
 .form button {
     margin: 0 auto;
     color: #fff;
@@ -222,12 +255,24 @@ p, a, li, input, textarea {
     text-transform: uppercase;
 }
 .form input[type="text"]:focus,
-.form  textarea:focus{
+.form textarea:focus{
     outline: none;
 }
 
+.form input[type="text"].error,
+.form textarea.error {
+    border-radius: 5px 5px 0 0;
+}
+
 .error-message {
+    padding: 3px;
+    color: #fff;
+    background: var(--dark);
     display: block;
+    width: 100%;
+    border-left: 10px solid #ff2255;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 /*Footer section*/
@@ -247,6 +292,70 @@ p, a, li, input, textarea {
 }
 .footer>button {
     margin: 0 auto;
+}
+
+/*404 page*/
+.not-found {
+    text-align: center;
+    margin: 0 auto;
+    height: 300px;
+}
+.not-found-eyes {
+    opacity: 0.2;
+    font-size: 5rem;
+    position: absolute;
+    right: 40px;
+    top: 80px;
+    animation: shake 0.4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-2deg); }
+    20% { transform: translate(-3px, 0px) rotate(2deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(2deg); }
+    50% { transform: translate(-1px, 2px) rotate(-2deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-2deg); }
+    80% { transform: translate(-1px, -1px) rotate(2deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-2deg); }
+  }
+
+.not-found .inner-element {
+    margin-top: 100px;
+}
+
+.not-found .inner-element h1 {
+    font-size: 140px;
+}
+
+.not-found .inner-element .title {
+    -webkit-text-stroke: 2px black;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(
+        45deg, 
+        var(--primary) 25%, 
+        var(--shade) 25%, 
+        var(--shade) 50%, 
+        var(--primary) 50%, 
+        var(--primary) 75%, 
+        var(--shade) 75%, 
+        var(--shade) 100%);
+    background-size: 56.57px 56.57px;
+    -webkit-background-clip: text;
+    animation: background 1s linear infinite;
+}
+
+@keyframes background {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 52px 0;
+    }
 }
 
 @media only screen and (min-width: 768px) { /*Desktop view*/
@@ -341,7 +450,6 @@ p, a, li, input, textarea {
         font-family: 'Overpass';
     }
     .form input[type="text"] {
-        border: none;
         width: 100%;
         border-radius: 3px;
         padding: 2px 5px;
@@ -398,6 +506,29 @@ p, a, li, input, textarea {
 
     .footer > a#link {
         font-family: 'FiraSans', sans-serif;
+    }
+
+    .not-found {
+        height: 500px;
+    }
+
+    .not-found-eyes {
+        font-size: 10rem;
+        top: 50px;
+        right: 20%;
+    }
+
+    .not-found .inner-element h1 {
+        font-size: 10rem;
+    }
+
+    @keyframes background {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 9.61% 0;
+        }
     }
     
 }
