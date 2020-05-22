@@ -3,6 +3,7 @@ import validate from "./validators"
 import { Fade } from "react-reveal"
 
 export default function Contact() {
+
   const [{ mail, name, subject, message }, setFormValues] = useState({
     mail: "",
     name: "",
@@ -40,7 +41,7 @@ export default function Contact() {
   return (
     <form name="contact" onSubmit={handleSubmit} autoComplete="off" className="form" netlify data-netlify="true" netlify-honeypot="bot-field">
       <fieldset disabled={loading}>
-        <input type="hidden" name="contact" value="contact" />
+        <input type="hidden" name="form-name" value="contact" />
         <label for="name" htmlFor="name">Name</label>
         <input
           id="name"
