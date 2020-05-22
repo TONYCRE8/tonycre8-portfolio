@@ -40,7 +40,7 @@ export default function Contact() {
   return (
     <form name="contact" onSubmit={handleSubmit} autoComplete="off" className="form" netlify data-netlify="true" netlify-honeypot="bot-field">
       <fieldset disabled={loading}>
-        <input type="hidden" name="bot-field" value="contact" />
+        <input type="hidden" name="contact" value="contact" />
         <label for="name" htmlFor="name">Name</label>
         <input
           id="name"
