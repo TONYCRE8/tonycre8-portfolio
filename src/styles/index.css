@@ -33,13 +33,15 @@
     margin-left: 5px;
 }
 
-.image {
+.index-banner .image {
     position: absolute;
     height: 225px;
-    width: 200px;
+    width: 225px;
     right: 0;
     top: 150px;
-    background-image: var(--image);
+    background-image: var(--avatar);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 .wall {
     height: 470px;
@@ -193,8 +195,9 @@
         letter-spacing: -0.2rem;
     }
 
-    .index-banner img {
+    .index-banner .image {
         height: 350px;
+        width: 350px;
         right: 20vw;
         top: 200px;
     }

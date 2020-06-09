@@ -4,8 +4,6 @@ import ExperienceView from "../components/about/experienceView"
 import Layout from "../components/layout"
 import { Fade } from "react-reveal"
 
-import image from "../../content/assets/_MG_0393.jpg"
-
 export default function About() {
   return (
     <Layout width={"100%"} right="0" left="0">
@@ -16,7 +14,7 @@ export default function About() {
             <div id="tr"></div>
             <div id="bl"></div>
             <div id="br"></div>
-            <img className="origin-image" src={image} />
+            <div class="image"></div>
           </div>
           <div className="bio-text">
             <h1>Who?</h1>
@@ -36,10 +34,11 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="testimonial-view">
-        <h1>Testimonials</h1>
-        <TestimonialView />
-      </div>
     </Layout>
   )
 }
+
+{/* <div className="testimonial-view">
+        <h1>Testimonials</h1>
+        <TestimonialView />
+</div> */}
