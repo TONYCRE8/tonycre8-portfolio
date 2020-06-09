@@ -33,14 +33,14 @@
     margin-left: 5px;
 }
 
-.index-banner img {
+.image {
     position: absolute;
     height: 225px;
-    width: auto;
+    width: 200px;
     right: 0;
     top: 150px;
+    background-image: var(--image);
 }
-
 .wall {
     height: 470px;
     width: 50%;

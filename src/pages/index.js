@@ -44,9 +44,7 @@ const SiteIndex = ({ data, location }) => {
             <RollText></RollText>
           </div>
         </div>
-        <Slide right>
-          <img src={banner} alt="Carl Wheezer" />
-        </Slide>
+        <div className="image" alt="Carl Wheezer"></div>
       </div>
       <Fade bottom duration={800}>
         <div className="who">

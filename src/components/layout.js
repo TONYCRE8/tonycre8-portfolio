@@ -28,6 +28,7 @@ const Layout = ({ title, children, width, padding, right, left }) => {
         --secondary: ${themes[theme].secondary};
         --shade: ${themes[theme].shade};
         --dark: ${themes[theme].dark};
+        --image: ${themes[theme].image};
       }
     `}
       </style>
