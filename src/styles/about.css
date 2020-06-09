@@ -1,32 +1,139 @@
-.about-page {
-    overflow-x: hidden;
-}
-.about-panel {
-    margin: 50px auto;
-    width: 60%;
-    height: 450px;
-    background: var(--primary);
-    transform: skewX(-12deg);
-}
-
-.about-panel>.inner-element {
-    padding: 50px 70px;
-    transform: skewX(12deg);
+.bio-section {
+    margin: 0 auto;
+    width: 90%;
     display: flex;
+    flex-flow: column wrap;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+.origin-image {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    object-position: 100% 0;
+    border-radius: 5px;
 }
 
-.about-panel .poster-image {
-    width: 40%;
+.bio-text {
+    width: 100%;
+}
+.bio-text h1 {
+    margin-bottom: 8px;
 }
 
-.poster-image img {
-    width: 200px
+.bio-text p {
+    font-size: 0.9rem;
 }
 
-.about-panel .side-text {
+/*Experience*/
+.journey-section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.journey-section>h1 {
+    text-align: center;
+}
+.journey-items {
+    width: 100%;
+    margin: 30px auto;
+    border-left: 3px solid var(--secondary);
+}
+
+.hidden {
+    display: none;
+}
+
+.experience {
+    display: block;
+    width: 90%;
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+.experience::before {
+    content: '';
+    text-align: center;
+    background: #fff;
+    border: 3px solid var(--secondary);
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin-left: -61px;
+    font-size: 30px;
+    margin-top: -8px;
+    color: var(--secondary);
+}
+.experience.education::before {
+    content: '✎';
+    line-height: 37px;
+}
+.experience.employment::before {
+    content: '🛠';
+    line-height: 35px;
+}
+
+.experience h1 {
+    font-size: 1.6rem;
+    text-transform: none;
+    color: var(--secondary);
+    margin-bottom: 4px;
+}
+
+.experience h2 {
+    font-size: 1.2rem;
+    text-transform: none;
+    margin-bottom: 16px;
+    color: #636363;
+}
+
+.experience small#type {
+    display: block;
+    position: absolute;
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+    transform-origin: 35px 79px;
     text-align: right;
-    width: 60%;
+    margin: 20px 0;
+    line-height: 30px;
+    height: 20px;
+    width: 80px;
 }
+.experience small#date {
+    display: flex;
+    margin-bottom: 4px;
+}
+.experience small#date::before {
+    content: '';
+    height: 3px;
+    margin-top: 10px;
+    margin-left: -30px;
+    margin-right: 5px;
+    max-width: 25px;
+    background: var(--secondary);
+    flex: 1;
+}
+
+.details {
+    color: #494949;
+    font-size: 0.9rem;
+}
+
+.details.education {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.details.education #grades {
+    width: 200px;
+    font-weight: 600;
+}
+.details.education {
+    width: 100%;
+}
+
+/*Testimonials*/
 
 .testimonial-view {
     display: flex;
@@ -58,4 +165,95 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    font-size: 0.9rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .bio-section {
+        width: 70%;
+        display: flex;
+        flex-flow: row nowrap;
+        padding: 12px 5%;
+    }
+
+    .bio-section::before {
+        content: '';
+        height: 5px;
+        margin-right: 5px;
+        margin-top: 100px;
+        width: 100px;
+        background: var(--primary);
+    }
+    .bio-section::after {
+        content: '';
+        height: 5px;
+        margin-left: 5px;
+        margin-top: 100px;
+        width: 100px;
+        background: var(--primary);
+    }
+    
+    .bio-image {
+        min-width: 200px;
+        margin: 8px;
+        margin-left: 0;
+        display: flex;
+        flex-flow: row wrap;
+        margin-right: 20px;
+    }
+    .bio-image div {
+        height: 100px;
+        width: 100px;
+        background: var(--shade);
+        position: relative;
+        transition: 0.4s transform;
+        z-index: 10;
+    }
+    .bio-section:hover .bio-image div#tl {
+        transition-delay: 0s;
+        transform: translate(-35px, -50px);
+    }
+
+    .bio-section:hover .bio-image div#tr {
+        transition-delay: 0.2s;
+        transform: translate(16px, -26px);
+    }
+
+    .bio-section:hover .bio-image div#bl {
+        transition-delay: 0.1s;
+        transform: translate(-27px, 43px);
+    }
+
+    .bio-section:hover .bio-image div#br {
+        transition-delay: 0.3s;
+        transform: translate(10px, 15px);
+    }
+    .origin-image {
+        object-fit: cover;
+        object-position: 100% 0;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        border: none;
+    }
+    img.bio-image {
+        object-fit: cover;
+        object-position: 100% 0;
+    }
+    .bio-text {
+        width: 100%;
+        text-align: left;
+    }
+    .bio-text h1 {
+        margin-bottom: 8px;
+    }
+    .testimonial-view {
+        width: 80vw;
+    }
+    .slider {
+        max-width: 100%;
+    }
+    .journey-section {
+        width: 60vw;
+    }
 }

@@ -10,7 +10,7 @@ import ProjectPreview from "../components/portfolio/project-preview"
 import Contact from "../components/contact/contact"
 
 import "../styles/index.css"
-import banner from "../../content/assets/banner-1.png"
+import banner from "../../content/assets/av-pink.png" //Would hope to change this to suit the theming thing
 
 const RollText = () => {
   return (
@@ -57,7 +57,7 @@ const SiteIndex = ({ data, location }) => {
                 To be fair, that's quite a solid question to be asking at this
                 point.
                 <br></br>
-                To keep a long story short, I'm working up as a Front End Web
+                To keep a long story short, I'm working up as a Front End
                 Developer in Peterborough, England.
               </p>
             </div>
@@ -79,6 +79,7 @@ const SiteIndex = ({ data, location }) => {
               display: "flex",
               flexFlow: "row",
               justifyContent: "center",
+              marginBottom: "4px"
             }}
           >
             <ProjectPreview limit={3} />

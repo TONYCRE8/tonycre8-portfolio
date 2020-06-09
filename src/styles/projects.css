@@ -5,8 +5,8 @@
 .project-list {
     width: 100%;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-flow: column wrap;
+    align-items: center;
     margin: 0 auto;
 }
 
@@ -21,8 +21,8 @@
 }
 
 .project-list > .project-item {
-    width: 192px;
-    height: 108px;
+    height: 150px;
+    width: 267px;
 }
 
 .project-item a {
@@ -55,7 +55,7 @@
     grid-area: img;
     height: 150px;
     width: 267px;
-    object-fit: fill;
+    object-fit: cover;
     text-decoration: none;
     box-shadow: none;
     z-index: -1;
@@ -113,9 +113,13 @@
 @media only screen and (min-width: 768px) {
     .project-item,
     .project-list > .project-item  {
-        height: 150px;
-        width: 267px;
-        margin: 15px;
+        height: 140px;
+        width: 260px;
+    }
+
+    .project-list {
+        flex-flow: row wrap;
+        justify-content: center;
     }
     
     .project-item:hover {
@@ -135,6 +139,7 @@
 
     .project-item .project-image {
         filter: none;
+        object-fit: cover;
     }
 
     .project-item:hover .project-image {

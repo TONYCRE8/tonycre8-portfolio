@@ -1,0 +1,21 @@
+[{
+        "type": "employment",
+        "position": "Part-time English & Maths Tutor",
+        "place": "Explore Learning",
+        "start_date": "August, 2019",
+        "end_date": "Present",
+        "description": "At Explore Learning, I learned a lot about the importance of Teamwork and communication. Working in a fast paced, team environment allowed me the opportunity to morph into a real team player. I also of course, developed my skill in teaching and tuition, having better a better ability to pass my skills and knowledge over to others who are willing to learn."
+    },
+    {
+        "type": "education",
+        "position": "BTEC Level 3 Extended Diploma in Software Development",
+        "place": "Peterborough Regional College",
+        "start_date": "September, 2016",
+        "end_date": "June, 2018",
+        "description": "During my time at college, I learned a lot of valuable project management skills, including handling real-world client projects. I learned about a variety of areas from previous industry professionals, such as Systems Security, Games Development, Object-Oriented Programming, Web Development and more.",
+        "grades": [
+            "Overall Grade:",
+            "DDM"
+        ]
+    }
+]

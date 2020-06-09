@@ -20,7 +20,7 @@ function validateSubject(maybeSubject) {
 }
 
 function validateMessage(maybeMessage) {
-  return maybeMessage && maybeMessage.length > 150
+  return maybeMessage && maybeMessage.length > 149
 }
 
 export default {
