@@ -73,12 +73,18 @@
     color: var(--secondary);
 }
 .experience.education::before {
-    content: '✎';
-    line-height: 37px;
+    font-family: "fa";
+    text-align: center;
+    font-size: 25px;
+    content: '\f303';
+    line-height: 32px;
 }
 .experience.employment::before {
-    content: '🛠';
-    line-height: 35px;
+    font-family: "fa";
+    text-align: center;
+    font-size: 25px;
+    content: '\f0b1';
+    line-height: 32px;
 }
 
 .experience h1 {

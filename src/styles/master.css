@@ -18,6 +18,11 @@
     src: url("../fonts/Overpass-Light.ttf")    
 }
 
+@font-face {
+    font-family: 'fa';
+    src: url("../fonts//fa-solid-900.ttf")    
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -527,6 +532,12 @@ p {
     .form input[type="text"]:focus,
     .form  textarea:focus{
         outline: none;
+    }
+
+    .form label {
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.01rem;
     }
     
     .error-message {
