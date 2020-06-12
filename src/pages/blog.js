@@ -49,7 +49,8 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout width={"100%"} right="auto" left="auto">
-      <SEO title="All posts" />
+      <SEO title="All posts"
+      description="This is a list of all of Tony's blog posts. The articles cover a variety of topics, from web technologies, to fashion, to lifestsyle articles."/>
       <div className="blog-page">
         <h1 style={{ textAlign: "center" }}>Blog articles</h1>
         <Filter data={data} posts={posts} />

@@ -10,7 +10,6 @@ import ProjectPreview from "../components/portfolio/project-preview"
 import Contact from "../components/contact/contact"
 
 import "../styles/index.css"
-import banner from "../../content/assets/av-pink.png" //Would hope to change this to suit the theming thing
 
 const RollText = () => {
   return (
@@ -29,7 +28,8 @@ const SiteIndex = ({ data, location }) => {
 
   return (
     <Layout width={"100%"} padding="24px 0" left="0" right="0">
-      <SEO title="Home page" />
+      <SEO title="Home page"
+      description="The landing page for Tony Ingall's digital portfolio website. Tony Ingall creates websites, web apps, and other such applications within his free time."/>
       <div className="index-banner">
         <div className="wall" id="left">
           <Slide left>

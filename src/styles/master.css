@@ -290,7 +290,6 @@ p {
     background: #363636;
     border-radius: 5px;
     padding: 5px;
-    opacity: 1;
 }
 
 .tick {
@@ -324,6 +323,21 @@ p {
 }
 .footer>button {
     margin: 0 auto;
+}
+
+.socials {
+    display: flex;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.social {
+    font-size: 30px;
+    color: #fff;
+    box-shadow: none;
+    margin: 0 5px;
 }
 
 /*404 page*/

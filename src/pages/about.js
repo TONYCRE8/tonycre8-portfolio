@@ -3,10 +3,13 @@ import TestimonialView from "../components/about/testimonialView"
 import ExperienceView from "../components/about/experienceView"
 import Layout from "../components/layout"
 import { Fade } from "react-reveal"
+import SEO from "../components/seo"
 
 export default function About() {
   return (
     <Layout width={"100%"} right="0" left="0">
+      <SEO title="About Tony"
+      description="Tony Ingall is a web developer in the making, having had experience on a variety of projects and building up his skills in his free time."/>
       <Fade up>
         <div className="bio-section">
           <div className="bio-image">

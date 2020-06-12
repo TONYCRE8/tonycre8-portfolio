@@ -6,7 +6,8 @@ import Layout from "../components/layout"
 export default function Projects() {
   return (
     <Layout width={"100%"} padding="24px 0" left="0" right="0">
-      <SEO title="Projects" />
+      <SEO title="Projects"
+      description="These are all the projects Tony has done thus far. Whether it be a website or application, you can find all his works here."/>
       <div className="projects-header">
         <h1>Projects</h1>
         <p>

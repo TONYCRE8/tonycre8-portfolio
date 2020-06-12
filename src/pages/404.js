@@ -10,7 +10,8 @@ const NotFoundPage = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle} width={`100%`} padding="24px 0">
-      <SEO title="404: Not Found" />
+      <SEO title="404: Not Found"
+      description="Looks like we encountered an issue! Best find a way back to where we came from, huh?"/>
       <div className="not-found">
       <div className="not-found-eyes">
             👀

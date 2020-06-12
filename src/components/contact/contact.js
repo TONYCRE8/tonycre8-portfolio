@@ -60,12 +60,10 @@ export default function Contact() {
  
   return (
     <>
-      <Fade left duration={500} opposite when={success}>
-        <div className="success-message">
+      <div className={success ? "success-message" : "hidden success-message"}>
         <p className="tick">✓</p>
         <p>Thank you for getting in touch! We'll get back to you as soon as we can!</p>
-        </div>
-      </Fade>
+      </div>
       <form ref={form} name="contact" onSubmit={handleSubmit} method="POST" autoComplete="off" className="form" netlify data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact" />
         <div hidden>
