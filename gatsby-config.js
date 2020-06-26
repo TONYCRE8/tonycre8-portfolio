@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `TONYCRE8`,
     author: `Anthony Ingall`,
-    description: `#`,
+    description: `A digital portfolio website for Anthony Ingall, a web developer in Peterborough and the Cambridgeshire area.`,
     siteUrl: `https://www.tonycre8.co.uk`,
     social: {
       twitter: `tonycre8`,
