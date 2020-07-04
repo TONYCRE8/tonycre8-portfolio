@@ -1,6 +1,6 @@
 ---
 title: CRE8 Animate in the works!
-date: "2020-07-03T21:15:01.224Z"
+date: "2020-07-04T20:21:01.224Z"
 description: "Something is coming, as a part of my #100DaysOfCode challenge, I've decided to start creating an animation library that works with CSS and React. What's it like?"
 thumbnail: './thumb.png'
 tags: ['react', '100daysofcode', 'css', 'javascript', 'project', 'work']
