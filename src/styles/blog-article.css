@@ -12,7 +12,9 @@ li {
     margin: 0 auto;
 }
 #article p {
-    margin: 10px 0;
+    margin: 15px 0;
+    letter-spacing: 0.2px;
+    font-size: 18px;
 }
 #article blockquote {
     border-color: var(--primary);
@@ -22,12 +24,13 @@ li {
 }
 
 #article img {
+    width: 100%;
     border-radius: 5px;
 }
 
 #article pre[class*="language-"] {
     border-radius: 5px;
-    background: #363636;
+    background: var(--dark);
 }
 code[class*="language-"] {
     color: #fff;
@@ -37,7 +40,8 @@ code[class*="language-"] {
 }
 
 :not(pre) > code[class*="language-"] {
-    background: #363636;
+    background: var(--dark);
+    padding: 1.5px 3px;
 }
 
 /*let, var, etc*/
@@ -52,7 +56,7 @@ code[class*="language-"] {
 }
 /*string, etc*/
 .token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
-    color: #72d472
+    color: #a4e9a4
 }
 /*Number, etc*/
 .token.tag, .token.boolean, .token.number, .token.symbol, .token.deleted {
@@ -88,14 +92,22 @@ nav > ul li {
     color: var(--secondary)
 }
 
+a {
+    color: var(--secondary)
+}
+
+iframe {
+    border-radius: 5px;
+    margin: 0;
+}
+
 @media only screen and (min-width: 768px) {
     .button.back {
         position: absolute;
-        left: 100px;
-
+        left: 20px;
     }
     #article {
-        width: 55vw;
+        width: 70vw;
     }
     code[class*="language-"] {
         font-size: 1rem;
@@ -103,5 +115,17 @@ nav > ul li {
     nav {
         width: 55vw;
         margin: 0 auto;
+    }
+    #article p {
+        font-size: 16px;
+    }
+}
+@media only screen and (min-width: 2100px) {
+    #article {
+        width: 55vw;
+    }
+    .button.back {
+        position: absolute;
+        left: 100px;
     }
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import Nav from "./nav"
 import Logo from "../../content/assets/logo.png"
 import themes from "../styles/themes"
-import { FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa"
+import { FaTwitter, FaLinkedinIn } from "react-icons/fa"
 
 const Layout = ({ title, children, width, padding, right, left }) => {
   const [theme, setTheme] = useState("pink")
@@ -104,7 +104,6 @@ const Layout = ({ title, children, width, padding, right, left }) => {
             </div>
             <div class="socials">
               <a class="social" href="https://twitter.com/tonycre8"><FaTwitter/></a>
-              <a class="social" href="https://instagram.com/tonycre8"><FaInstagram/></a>
               <a class="social" href="https://linkedin.com/in/anthonyingall/"><FaLinkedinIn/></a>
             </div>
           </div>

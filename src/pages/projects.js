@@ -18,6 +18,7 @@ export default function Projects() {
       <div class="project-list">
         <ProjectPreview limit={1000} />
       </div>
+      <small id="teaser">More coming.. soon?</small>
     </Layout>
   )
 }
