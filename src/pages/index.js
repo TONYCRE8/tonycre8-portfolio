@@ -1,7 +1,10 @@
-import React from "react"
+import React, {useRef, useEffect} from "react"
 import { Link, graphql } from "gatsby"
 import TextLoop from "react-text-loop"
-import { Fade, Slide } from "react-reveal"
+
+import gsap from "gsap"
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import {Power2} from "gsap/gsap-core"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -26,45 +29,66 @@ const RollText = () => {
 
 const SiteIndex = ({ data, location }) => {
 
+  let name = useRef(null)
+  let who = useRef(null)
+  let projects = useRef(null)
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger); 
+    }
+
+    gsap.fromTo(name, .6, {x: "-40vw"}, {x: 0, easing: Power2.easeIn})
+
+    gsap.fromTo(who, .8, {y: -300, opacity: 0}, {y: 0, opacity: 1, easing: Power2.easeIn,
+      scrollTrigger: {
+        trigger: ".who",
+    }})
+
+    var proj = gsap.timeline({delay: .3})
+    proj.fromTo(projects, .3, {x: "-30vw", opacity: 0, skewY: "12deg"}, {skewY: "12deg", x: 0, opacity: 1, scrollTrigger: {
+      trigger: "#proj",
+    }})
+    proj.to(projects, .3, {delay: .3, skewY: "0deg", scrollTrigger: {
+      trigger: "#proj",
+    }})
+  })
+
   return (
     <Layout width={"100%"} padding="24px 0" left="0" right="0">
       <SEO title="Home page"
       description="The landing page for Tony Ingall's digital portfolio website. Tony Ingall creates websites, web apps, and other such applications within his free time."/>
       <div className="index-banner">
         <div className="wall" id="left">
-          <Slide left>
-            <div className="inner-element">
+            <div className="inner-element" ref={el => {name = el}}>
               <h1>Anthony</h1>
               <h1>Ingall</h1>
             </div>
-          </Slide>
         </div>
         <div className="wall" id="right">
           <div className="inner-element">
             <RollText></RollText>
           </div>
         </div>
-        <div className="image" alt="Carl Wheezer"></div>
+        <div className="image" alt="Tony Ingall cartoon-styled character"></div>
       </div>
-      <Fade bottom duration={800}>
-        <div className="who">
-          <div className="who-box">
-            <div className="inner-element">
-              <h1>WHO?</h1>
-              <p>
-                To be fair, that's quite a solid question to be asking at this
-                point.
-                <br></br>
-                To keep a long story short, I'm working up as a Front End
-                Developer in Peterborough, England.
-              </p>
-            </div>
-          </div>
-          <div className="button">
-            <Link to={"/about"}>Learn more &#8594;</Link>
+      <div className="who" ref={el => {who = el}}>
+        <div className="who-box">
+          <div className="inner-element">
+            <h1>WHO?</h1>
+            <p>
+              To be fair, that's quite a solid question to be asking at this
+              point.
+              <br></br>
+              To keep a long story short, I'm working up as a Front End
+              Developer in Peterborough, England.
+            </p>
           </div>
         </div>
-      </Fade>
+        <div className="button">
+          <Link to={"/about"}>Learn more &#8594;</Link>
+        </div>
+      </div>
       <div className="portfolio">
         <div className="inner-element">
           <h1>Portfolio Work</h1>
@@ -73,6 +97,7 @@ const SiteIndex = ({ data, location }) => {
             either for businesses or just small projects done for fun.
           </p>
           <div
+            ref={el => {projects = el}}
             style={{
               display: "flex",
               flexFlow: "row",

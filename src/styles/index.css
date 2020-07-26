@@ -15,7 +15,7 @@
     height: 550px;
     flex-flow: row wrap;
     margin-top: -250px;
-    margin-bottom: 500px;
+    margin-bottom: 100px;
 }
 
 .index-banner h1 {
@@ -66,7 +66,7 @@
 
 .who {
     display: block;
-    margin: 200px 0;
+    margin-bottom: 200px;
 }
 
 .who-box {

@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-import { Fade } from "react-reveal"
+import gsap from 'gsap'
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -13,6 +13,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const { previous, next } = pageContext
 
+  useEffect(() => {
+    gsap.fromTo("#thumb", .4, {opacity: 0, y: -300}, {opacity: 1, y: 0})
+    gsap.fromTo("#head", .4, {opacity: 0, y: -200}, {opacity: 1, y: 0})
+    gsap.fromTo(".back", .6, {opacity: 0, x: 300}, {opacity: 1, x: 0, delay: 1})
+  })
+
   return (
     <Layout width={"100%"} left={"auto"} right={"auto"}>
       <SEO
@@ -20,22 +26,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
         thumb={post.frontmatter.thumbnail.childImageSharp.sizes.src}
       />
-      <Fade left delay={2000}>
-        <Link className="button back" to={`/blog`}>&larr; Back</Link>
-      </Fade>
+      <Link className="button back" to={`/blog`}>&larr; Back</Link>
       <article id="article">
-        <Fade up>
+        <div id="thumb">
           <Img sizes={post.frontmatter.thumbnail.childImageSharp.sizes}></Img>
-        </Fade>
-        <Fade top cascade delay={800}>
-          <header>
-            <h1>{post.frontmatter.title}</h1>
-            <p>{post.frontmatter.date}</p>
-            {post.frontmatter.tags.map(tag => (
-              <small>#{tag} </small>
-            ))}
-          </header>
-        </Fade>
+        </div>
+        <header id="head">
+          <h1>{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.date}</p>
+          {post.frontmatter.tags.map(tag => (
+            <small>#{tag} </small>
+          ))}
+        </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
         <footer>

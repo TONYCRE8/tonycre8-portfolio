@@ -65,7 +65,6 @@ select:focus {
     .filter {
         display: flex;
         margin-bottom: 5px;
-        width: 270px;
         margin: 0 auto;
         margin-bottom: 5vh;
     }

@@ -7,6 +7,7 @@
     min-height: 65vh;
     display: flex;
     flex-flow: column wrap;
+    align-items: center;
     margin: 0 auto;
     margin-top: 50px;
 }
@@ -128,6 +129,7 @@
     .project-list {
         flex-flow: row wrap;
         justify-content: center;
+        align-content: flex-start;
     }
     
     .project-item:hover {

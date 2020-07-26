@@ -52,7 +52,7 @@ const Layout = ({ title, children, width, padding, right, left }) => {
             <Nav />
           </div>
         </header>
-        <main>{children}</main>
+        <main className="page">{children}</main>
         <footer>
           <div className="footer">
             TONYCRE8© {new Date().getFullYear()}, Built with {` `}
